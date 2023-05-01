@@ -93,8 +93,9 @@
                 </div>
             </div>
             <div class="col">
-                <div id="Month" class="clock"></div>
+
                 <div class="clock-section-title">Month:</div>
+                <div id="Month" class="clock"></div>
                 <div class="months-loader">
                     <div class="months-loader-item months-loader-item-normal-color month_01" data-month_id="01">
                         January
@@ -133,8 +134,32 @@
                 </div>
             </div>
             <div class="col">
+
                 <div class="clock-section-title">Week day:</div>
-                ?
+                <div id="WeekDay" class="clock"></div>
+                <div class="week-days-loader">
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_1"
+                         data-week_day_id="1">Monday
+                    </div>
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_2"
+                         data-week_day_id="2">Tuesday
+                    </div>
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_3"
+                         data-week_day_id="3">Wednesday
+                    </div>
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_4"
+                         data-week_day_id="4">Thursday
+                    </div>
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_5"
+                         data-week_day_id="5">Friday
+                    </div>
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_6"
+                         data-week_day_id="6">Saturday
+                    </div>
+                    <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_0"
+                         data-week_day_id="0">Sunday
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -330,7 +355,7 @@
             this.currentMonthOriginal = this.date.getMonth(); // 0 - 11.
             this.currentMonth = (this.date.getMonth() + 1); // With correction.
             this.currentDay = this.date.getDate();
-            this.weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
             if (!this.currentMonth.toString().startsWith("0") || this.currentMonth === 0) {
                 this.currentMonth = (this.currentMonth < 10) ? ("0" + this.currentMonth) : this.currentMonth;
             }
@@ -338,7 +363,18 @@
 
                 this.currentDay = (this.currentDay < 10) ? ("0" + this.currentDay) : this.currentDay;
             }
+
+            this.weekDayNames = {
+                0: 'Sunday',
+                1: 'Monday',
+                2: 'Tuesday',
+                3: 'Wednesday',
+                4: 'Thursday',
+                5: 'Friday',
+                6: 'Saturday',
+            };
             this.currentWeekDayName = this.weekDayNames[this.date.getDay()];
+
             this.moonPhaseNames = {
                 0: "New Moon",
                 1: "Waxing Crescent Moon",
@@ -376,7 +412,7 @@
         showDate() {
             this.currentYear = this.date.getFullYear();
 
-            let dateString = this.currentYear + "-" + this.currentMonth + "-" + this.currentDay + ', ' + this.currentWeekDayName;
+            let dateString = "Year: " + this.currentYear + "\nMonth: " + this.currentMonth + "\nDay: " + this.currentDay;
             console.log(this.currentYear);
             console.log(dateString);
             document.getElementById("Date").innerText = dateString;
@@ -531,6 +567,10 @@
             return this.months[monthId];
         }
 
+        getWeekDayName(weekDayId) {
+            return this.weekDayNames[weekDayId];
+        }
+
         getCurrentYearSeasonName() {
             return this.yearSeasons[this.getCurrentYearSeasonId()];
         }
@@ -574,6 +614,13 @@
             document.getElementById("Month").innerText = currentMonthName;
 
             setTimeout(this.showMonth, 86400);
+        }
+
+        showWeekDay() {
+// console.log(this.currentWeekDayName)
+            document.getElementById("WeekDay").innerText = this.currentWeekDayName;
+
+            setTimeout(this.showWeekDay, 86400);
         }
 
         switchSecondsLoader(currentSecond) {
@@ -701,6 +748,23 @@
             document.querySelector('.month_' + currentMonthId).classList.add('months-loader-item-inverted-color');
         }
 
+        switchWeekDaysLoader(currentWeekDayId) {
+            console.log(currentWeekDayId)
+            var weekDayLoaderItemElements = document.querySelectorAll('.week-days-loader-item');
+
+            for (let k in weekDayLoaderItemElements) {
+                if (weekDayLoaderItemElements.hasOwnProperty(k)) {
+                    if (weekDayLoaderItemElements[k].getAttribute('data-week_day_id') < currentWeekDayId) {
+                        weekDayLoaderItemElements[k].classList.remove('data-weeks-loader-item-normal-color')
+                        weekDayLoaderItemElements[k].classList.add('data-weeks-loader-item-inverted-color')
+                    }
+                }
+            }
+
+            document.querySelector('.week-day-id_' + currentWeekDayId).classList.remove('week-days-loader-item-normal-color');
+            document.querySelector('.week-day-id_' + currentWeekDayId).classList.add('week-days-loader-item-inverted-color');
+        }
+
         showSecondsLoader() {
             try {
                 var currentSecond = this.date.getSeconds(); // 0 - 59
@@ -780,6 +844,18 @@
                 console.log(e);
             }
         }
+
+        showWeekDaysLoaderLoader() {
+            try {
+                this.switchWeekDaysLoader(this.date.getDay());
+
+                setTimeout(function () {
+                    (new Clock()).showWeekDaysLoaderLoader();
+                }, 1000);
+            } catch (e) {
+                console.log(e);
+            }
+        }
     }
 
     (function () {
@@ -794,6 +870,8 @@
         (new Clock()).showYearSeasonsLoader();
         (new Clock()).showMonth();
         (new Clock()).showMonthsLoader();
+        (new Clock()).showWeekDay();
+        (new Clock()).showWeekDaysLoaderLoader();
     })();
 
 </script>

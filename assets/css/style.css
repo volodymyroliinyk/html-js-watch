@@ -4,11 +4,11 @@ body {
 
 .header1 {
     font-family: Orbitron;
-    color: #ff30dd;
+    color: #ff62e4;
 }
 
 .clock {
-    color: #ff30dd;
+    color: #ff62e4;
     font-size: 34px;
     font-family: Orbitron;
     letter-spacing: 7px;
@@ -69,21 +69,34 @@ body {
     text-align: center;
 }
 
+.week-days-loader-item {
+    display: inline-block;
+    border: 1px solid;
+    width: 32.0%;
+    height: 22px;
+    font-family: Orbitron;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+
 .seconds-loader-item-normal-color,
 .minutes-loader-item-normal-color,
 .hours-loader-item-normal-color,
 .year-seasons-loader-item-normal-color,
-.months-loader-item-normal-color {
-    border-color: #ff30dd;
-    color: #ff30dd;
+.months-loader-item-normal-color,
+.week-days-loader-item-normal-color {
+    border-color: #ff62e4;
+    color: #ff62e4;
 }
 
 .seconds-loader-item-inverted-color,
 .minutes-loader-item-inverted-color,
 .hours-loader-item-inverted-color,
 .year-seasons-loader-item-inverted-color,
-.months-loader-item-inverted-color {
-    border-color: #ff30dd;
+.months-loader-item-inverted-color,
+.week-days-loader-item-inverted-color {
+    border-color: #ff62e4;
     color: #000;
-    background: #ff30dd;
+    background: #ff62e4;
 }
