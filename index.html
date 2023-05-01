@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Watch</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Watch">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style media="" data-href="https://fonts.googleapis.com/css?family=Orbitron">/* latin */
+    @font-face {
+        font-family: 'Orbitron';
+        font-style: normal;
+        font-weight: 400;
+        src: url(https://fonts.gstatic.com/s/orbitron/v29/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="header1">Watch</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <!--    <ul>-->
+    <!--        <li><a href="">Home</a></li>-->
+    <!--        <li><a href="">About</a></li>-->
+    <!--        <li><a href="">Contact</a></li>-->
+    <!--    </ul>-->
+</nav>
+
+<aside>
+
+</aside>
+
+<section>
+    <div class="container">
+        <!-- Content here -->
+        <div class="row">
+            <div class="col">
+                <div class="clock-section-title">Date:</div>
+                <div id="Date" class="clock"></div>
+            </div>
+            <div class="col">
+                <div class="clock-section-title">Time:</div>
+                <div id="MyClockDisplay12" class="clock"></div>
+                <div id="MyClockDisplay24" class="clock"></div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="clock-section-title">Moon phase:</div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div id="MoonPhase" class="clock"></div>
+                    </div>
+                    <div class="col">
+                        <div class="clock">
+                            <img id="MoonPhaseImage" src="" title="" alt="" class="moon-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="clock-section-title">Year season:</div>
+                <div id="YearSeason" class="clock"></div>
+                <div class="year-seasons-loader">
+                    <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_0"
+                         data-season_id="0">Winter
+                    </div>
+                    <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_1"
+                         data-season_id="1">Spring
+                    </div>
+                    <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_2"
+                         data-season_id="2">Summer
+                    </div>
+                    <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_3"
+                         data-season_id="3">Autumn
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="clock-section-title">Month:</div>
+                ?
+            </div>
+            <div class="col">
+                <div class="clock-section-title">Week day:</div>
+                ?
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="clock-section-title">Current hour:</div>
+                <div class="hours-loader">
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_00">00</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_01">01</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_02">02</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_03">03</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_04">04</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_05">05</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_06">06</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_07">07</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_08">08</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_09">09</div>
+
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_10">10</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_11">11</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_12">12</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_13">13</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_14">14</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_15">15</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_16">16</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_17">17</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_18">18</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_19">19</div>
+
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_20">20</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_21">21</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_22">22</div>
+                    <div class="hours-loader-item hours-loader-item-normal-color hour_23">23</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="clock-section-title">Current minute:</div>
+                <div class="minutes-loader">
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_00">00</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_01">01</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_02">02</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_03">03</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_04">04</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_05">05</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_06">06</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_07">07</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_08">08</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_09">09</div>
+
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_10">10</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_11">11</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_12">12</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_13">13</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_14">14</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_15">15</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_16">16</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_17">17</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_18">18</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_19">19</div>
+
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_20">20</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_21">21</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_22">22</div>
+                    <div class="minutes-loader-item minutes-loader-item-normal-color minute_23">23</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_24">24</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_25">25</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_26">26</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_27">27</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_28">28</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_29">29</div>
+
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_30">30</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_31">31</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_32">32</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_33">33</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_34">34</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_35">35</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_36">36</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_37">37</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_38">38</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_39">39</div>
+
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_40">40</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_41">41</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_42">42</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_43">43</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_44">44</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_45">45</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_46">46</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_47">47</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_48">48</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_49">49</div>
+
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_50">50</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_51">51</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_52">52</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_53">53</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_54">54</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_55">55</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_56">56</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_57">57</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_58">58</div>
+                    <div class="minutes-loader-item  minutes-loader-item-normal-color minute_59">59</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="clock-section-title">Current second:</div>
+                <div class="seconds-loader">
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_00">00</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_01">01</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_02">02</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_03">03</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_04">04</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_05">05</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_06">06</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_07">07</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_08">08</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_09">09</div>
+
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_10">10</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_11">11</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_12">12</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_13">13</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_14">14</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_15">15</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_16">16</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_17">17</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_18">18</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_19">19</div>
+
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_20">20</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_21">21</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_22">22</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_23">23</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_24">24</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_25">25</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_26">26</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_27">27</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_28">28</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_29">29</div>
+
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_30">30</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_31">31</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_32">32</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_33">33</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_34">34</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_35">35</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_36">36</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_37">37</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_38">38</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_39">39</div>
+
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_40">40</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_41">41</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_42">42</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_43">43</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_44">44</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_45">45</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_46">46</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_47">47</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_48">48</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_49">49</div>
+
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_50">50</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_51">51</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_52">52</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_53">53</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_54">54</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_55">55</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_56">56</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_57">57</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_58">58</div>
+                    <div class="seconds-loader-item  seconds-loader-item-normal-color second_59">59</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<footer>
+
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+<script>
+    class Clock {
+        constructor() {
+            this.date = new Date();
+            // this.currentYear = this.date.getFullYear();
+            this.currentMonth = (this.date.getMonth() + 1); // With correction.
+            this.currentDay = this.date.getDate();
+            this.weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            if (!this.currentMonth.toString().startsWith("0") || this.currentMonth === 0) {
+                this.currentMonth = (this.currentMonth < 10) ? ("0" + this.currentMonth) : this.currentMonth;
+            }
+            if (!this.currentDay.toString().startsWith("0") || this.currentDay === 0) {
+
+                this.currentDay = (this.currentDay < 10) ? ("0" + this.currentDay) : this.currentDay;
+            }
+            this.currentWeekDayName = this.weekDayNames[this.date.getDay()];
+            this.moonPhaseNames = {
+                0: "New Moon",
+                1: "Waxing Crescent Moon",
+                2: "Quarter Moon",
+                3: "Waxing Gibbous Moon",
+                4: "Full Moon",
+                5: "Waning Gibbous Moon",
+                6: "Last Quarter Moon",
+                7: "Waning Crescent Moon"
+            };
+
+            this.yearSeasons = {
+                0: 'Winter',
+                1: 'Spring',
+                2: 'Summer',
+                3: 'Autumn',
+            }
+        }
+
+        showDate() {
+            this.currentYear = this.date.getFullYear();
+
+            var dateString = this.currentYear + "-" + this.currentMonth + "-" + this.currentDay + ', ' + this.currentWeekDayName;
+            console.log(this.currentYear);
+            console.log(dateString);
+            document.getElementById("Date").innerText = dateString;
+
+            setTimeout(this.showDate, 864000);
+        }
+
+        showCurrentTime12() {
+            let time;
+
+            this.currentHour = this.date.getHours(); // 0 - 23
+            this.currentMinute = this.date.getMinutes(); // 0 - 59
+            this.currentSecond = this.date.getSeconds(); // 0 - 59
+
+            var session = "AM";
+
+            if (this.currentHour === 0) {
+                this.currentHour = 12;
+            }
+
+            if (this.currentHour > 12) {
+                this.currentHour = this.currentHour - 12;
+                session = "PM";
+            }
+
+            if (!this.currentHour.toString().startsWith("0") || this.currentHour === 0) {
+                this.currentHour = (this.currentHour < 10) ? ("0" + this.currentHour) : this.currentHour;
+            }
+
+            if (!this.currentMinute.toString().startsWith("0") || this.currentMinute === 0) {
+                this.currentMinute = (this.currentMinute < 10) ? ("0" + this.currentMinute) : this.currentMinute;
+            }
+
+            if (!this.currentSecond.toString().startsWith("0") || this.currentSecond === 0) {
+                this.currentSecond = (this.currentSecond < 10) ? ("0" + this.currentSecond) : this.currentSecond;
+            }
+
+            time = this.currentHour + ":" + this.currentMinute + ":" + this.currentSecond + " " + session;
+            document.getElementById("MyClockDisplay12").innerText = time;
+
+            // this.switchSecondsLoader(this.currentSecond);
+
+            setTimeout(function () {
+                (new Clock()).showCurrentTime12();
+            }, 1000);
+        }
+
+        showCurrentTime24() {
+            let time;
+
+            this.currentHour = this.date.getHours(); // 0 - 23
+            this.currentMinute = this.date.getMinutes(); // 0 - 59
+            this.currentSecond = this.date.getSeconds(); // 0 - 59
+
+            if (!this.currentHour.toString().startsWith("0") || this.currentHour === 0) {
+                this.currentHour = (this.currentHour < 10) ? ("0" + this.currentHour) : this.currentHour;
+            }
+
+            if (!this.currentMinute.toString().startsWith("0") || this.currentMinute === 0) {
+                this.currentMinute = (this.currentMinute < 10) ? ("0" + this.currentMinute) : this.currentMinute;
+            }
+
+            if (!this.currentSecond.toString().startsWith("0") || this.currentSecond === 0) {
+                this.currentSecond = (this.currentSecond < 10) ? ("0" + this.currentSecond) : this.currentSecond;
+            }
+
+            time = this.currentHour + ":" + this.currentMinute + ":" + this.currentSecond;
+            document.getElementById("MyClockDisplay24").innerText = time;
+
+            // this.switchSecondsLoader(this.currentSecond);
+
+            setTimeout(function () {
+                (new Clock()).showCurrentTime24();
+            }, 1000);
+        }
+
+        /**
+         * modified from http://www.voidware.com/moon_phase.htm
+         */
+        getMoonPhase(year, month, day) {
+            let c;
+            let e;
+            let jd;
+            let b;
+
+            if (month < 3) {
+                year--;
+                month += 12;
+            }
+
+            ++month;
+
+            c = 365.25 * year;
+
+            e = 30.6 * month;
+
+            jd = c + e + day - 694039.09; //jd is total days elapsed
+
+            jd /= 29.5305882; //divide by the moon cycle
+
+            b = parseInt(jd); //int(jd) -> b, take integer part of jd
+
+            jd -= b; //subtract integer part to leave fractional part of original jd
+
+            b = Math.round(jd * 8); //scale fraction from 0-8 and round
+
+            if (b >= 8) {
+                b = 0; //0 and 8 are the same so turn 8 into 0
+            }
+
+            // 0 => New Moon
+            // 1 => Waxing Crescent Moon
+            // 2 => Quarter Moon
+            // 3 => Waxing Gibbous Moon
+            // 4 => Full Moon
+            // 5 => Waning Gibbous Moon
+            // 6 => Last Quarter Moon
+            // 7 => Waning Crescent Moon
+
+            return b;
+        }
+
+        /**
+         *
+         */
+        showMoonPhase() {
+            this.currentYear = this.date.getFullYear();
+
+            let moonPhaseIndex = this.getMoonPhase(this.currentYear, this.currentMonth, this.currentDay);
+            let moonPhase = this.getMoonPhaseName(moonPhaseIndex);
+            let moonPhaseImage = '/assets/images/moon-phases/moon_' + moonPhaseIndex + '.png';
+
+            document.getElementById("MoonPhase").innerText = moonPhase;
+            document.getElementById("MoonPhaseImage").src = moonPhaseImage;
+            document.getElementById("MoonPhaseImage").title = moonPhase;
+            document.getElementById("MoonPhaseImage").alt = moonPhase;
+
+            setTimeout(this.showMoonPhase, 86400);
+        }
+
+
+        /**
+         * Human friendly moon Phase name.
+         *
+         * @param key
+         * @returns {*}
+         */
+        getMoonPhaseName(key) {
+            return this.moonPhaseNames[key];
+        }
+
+        getCurrentYearSeasonName() {
+            return this.yearSeasons[this.getCurrentYearSeasonId()];
+        }
+
+        getCurrentYearSeasonId() {
+            switch (this.currentMonth) {
+                case '12':
+                case '01':
+                case '02':
+                    return 0;
+
+                case '03':
+                case '04':
+                case '05':
+                    return 1;
+
+                case '06':
+                case '07':
+                case '08':
+                    return 2;
+
+                case '09':
+                case '10':
+                case '11':
+                    return 3;
+            }
+        }
+
+
+        showYearSeason() {
+            let currentYearSeasonName = this.getCurrentYearSeasonName();
+
+            document.getElementById("YearSeason").innerText = currentYearSeasonName;
+
+            setTimeout(this.showYearSeason, 86400);
+        }
+
+        switchSecondsLoader(currentSecond) {
+            currentSecond = currentSecond.toString();
+            var secondLoaderItemElements = document.querySelectorAll('.seconds-loader-item');
+
+            for (let k in secondLoaderItemElements) {
+                if (secondLoaderItemElements.hasOwnProperty(k)) {
+                    if (secondLoaderItemElements[k].innerHTML < currentSecond) {
+                        secondLoaderItemElements[k].classList.remove('seconds-loader-item-normal-color')
+                        secondLoaderItemElements[k].classList.add('seconds-loader-item-inverted-color')
+                    }
+                }
+            }
+
+            if (currentSecond == '00') {
+                var secondLoaderItemElements = document.querySelectorAll('.seconds-loader-item');
+
+                for (var k in secondLoaderItemElements) {
+                    if (secondLoaderItemElements.hasOwnProperty(k)) {
+                        secondLoaderItemElements[k].classList.remove('seconds-loader-item-inverted-color')
+                        secondLoaderItemElements[k].classList.add('seconds-loader-item-normal-color')
+                    }
+                }
+                document.querySelector('.second_59').classList.remove('seconds-loader-item-inverted-color');
+                document.querySelector('.second_59').classList.add('seconds-loader-item-normal-color');
+            }
+
+            document.querySelector('.second_' + currentSecond).classList.remove('seconds-loader-item-normal-color');
+            document.querySelector('.second_' + currentSecond).classList.add('seconds-loader-item-inverted-color');
+        }
+
+        switchMinutesLoader(currentMinute) {
+            currentMinute = currentMinute.toString();
+
+            var minuteLoaderItemElements = document.querySelectorAll('.minutes-loader-item');
+
+            for (let k in minuteLoaderItemElements) {
+                if (minuteLoaderItemElements.hasOwnProperty(k)) {
+                    if (minuteLoaderItemElements[k].innerHTML < currentMinute) {
+                        minuteLoaderItemElements[k].classList.remove('minutes-loader-item-normal-color')
+                        minuteLoaderItemElements[k].classList.add('minutes-loader-item-inverted-color')
+                    }
+                }
+            }
+
+            if (currentMinute == '00') {
+                var minuteLoaderItemElements = document.querySelectorAll('.minutes-loader-item');
+
+                for (var k in minuteLoaderItemElements) {
+                    if (minuteLoaderItemElements.hasOwnProperty(k)) {
+                        minuteLoaderItemElements[k].classList.remove('minutes-loader-item-inverted-color')
+                        minuteLoaderItemElements[k].classList.add('minutes-loader-item-normal-color')
+                    }
+                }
+                document.querySelector('.minute_59').classList.remove('minutes-loader-item-inverted-color');
+                document.querySelector('.minute_59').classList.add('minutes-loader-item-normal-color');
+            }
+
+            document.querySelector('.minute_' + currentMinute).classList.remove('minutes-loader-item-normal-color');
+            document.querySelector('.minute_' + currentMinute).classList.add('minutes-loader-item-inverted-color');
+        }
+
+        switchHoursLoader(currentHour) {
+            currentHour = currentHour.toString();
+
+            var hourLoaderItemElements = document.querySelectorAll('.hours-loader-item');
+
+            for (let k in hourLoaderItemElements) {
+                if (hourLoaderItemElements.hasOwnProperty(k)) {
+                    if (hourLoaderItemElements[k].innerHTML < currentHour) {
+                        hourLoaderItemElements[k].classList.remove('hours-loader-item-normal-color')
+                        hourLoaderItemElements[k].classList.add('hours-loader-item-inverted-color')
+                    }
+                }
+            }
+
+            if (currentHour == '00') {
+                var hourLoaderItemElements = document.querySelectorAll('.hours-loader-item');
+
+                for (var k in hourLoaderItemElements) {
+                    if (hourLoaderItemElements.hasOwnProperty(k)) {
+                        hourLoaderItemElements[k].classList.remove('hours-loader-item-inverted-color')
+                        hourLoaderItemElements[k].classList.add('hours-loader-item-normal-color')
+                    }
+                }
+
+                document.querySelector('.hour_23').classList.remove('hours-loader-item-inverted-color');
+                document.querySelector('.hour_23').classList.add('hours-loader-item-normal-color');
+            }
+
+            document.querySelector('.hour_' + currentHour).classList.remove('hours-loader-item-normal-color');
+            document.querySelector('.hour_' + currentHour).classList.add('hours-loader-item-inverted-color');
+        }
+
+        switchYearSeasonsLoader(currentYearSeasonId) {
+            var yearSeasonLoaderItemElements = document.querySelectorAll('.year-seasons-loader-item');
+
+            for (let k in yearSeasonLoaderItemElements) {
+                if (yearSeasonLoaderItemElements.hasOwnProperty(k)) {
+                    if (yearSeasonLoaderItemElements[k].getAttribute('data-season_id') < currentYearSeasonId) {
+                        yearSeasonLoaderItemElements[k].classList.remove('year-seasons-loader-item-normal-color')
+                        yearSeasonLoaderItemElements[k].classList.add('year-seasons-loader-item-inverted-color')
+                    }
+                }
+            }
+
+            document.querySelector('.season_' + currentYearSeasonId).classList.remove('year-seasons-loader-item-normal-color');
+            document.querySelector('.season_' + currentYearSeasonId).classList.add('year-seasons-loader-item-inverted-color');
+        }
+
+        showSecondsLoader() {
+            try {
+                var currentSecond = this.date.getSeconds(); // 0 - 59
+
+                if (!currentSecond.toString().startsWith("0") || currentSecond === 0) {
+                    currentSecond = (currentSecond < 10) ? ("0" + currentSecond) : currentSecond;
+                }
+
+                this.switchSecondsLoader(currentSecond);
+
+                setTimeout(function () {
+                    (new Clock()).showSecondsLoader();
+                }, 1000);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        showMinutesLoader() {
+            try {
+                var currentMinute = this.date.getMinutes(); // 0 - 59
+
+                if (!currentMinute.toString().startsWith("0") || currentMinute === 0) {
+                    currentMinute = (currentMinute < 10) ? ("0" + currentMinute) : currentMinute;
+                }
+
+                this.switchMinutesLoader(currentMinute);
+
+                setTimeout(function () {
+                    (new Clock()).showMinutesLoader();
+                }, 1000);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        showHoursLoader() {
+            try {
+                var currentHour = this.date.getHours(); // 0 - 59
+
+                if (!currentHour.toString().startsWith("0") || currentHour === 0) {
+                    currentHour = (currentHour < 10) ? ("0" + currentHour) : currentHour;
+                }
+
+                this.switchHoursLoader(currentHour);
+
+                setTimeout(function () {
+                    (new Clock()).showHoursLoader();
+                }, 1000);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
+        showYearSeasonsLoader() {
+            try {
+                const currentYearSeasonId = this.getCurrentYearSeasonId() // 0 - 3 .
+
+                this.switchYearSeasonsLoader(currentYearSeasonId);
+
+                setTimeout(function () {
+                    (new Clock()).showYearSeasonsLoader();
+                }, 1000);
+            } catch (e) {
+                console.log(e);
+            }
+        }
+    }
+
+    (function () {
+        (new Clock()).showDate();
+        (new Clock()).showCurrentTime24();
+        (new Clock()).showCurrentTime12();
+        (new Clock()).showMoonPhase();
+        (new Clock()).showYearSeason();
+        (new Clock()).showSecondsLoader();
+        (new Clock()).showMinutesLoader();
+        (new Clock()).showHoursLoader();
+        (new Clock()).showYearSeasonsLoader();
+    })();
+
+</script>
+
+</body>
+</html>
