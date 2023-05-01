@@ -4,19 +4,19 @@ body {
 
 .header1 {
     font-family: Orbitron;
-    color: #00fd1e;
+    color: #ff30dd;
 }
 
 .clock {
-    color: #00fd1e;
-    font-size: 28px;
+    color: #ff30dd;
+    font-size: 34px;
     font-family: Orbitron;
     letter-spacing: 7px;
 }
 
 .clock-section-title {
     font-family: Orbitron;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
 }
 
@@ -58,19 +58,32 @@ body {
     text-align: center;
 }
 
+.months-loader-item {
+    display: inline-block;
+    border: 1px solid;
+    width: 23.9999666%;
+    height: 22px;
+    font-family: Orbitron;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+}
+
 .seconds-loader-item-normal-color,
 .minutes-loader-item-normal-color,
 .hours-loader-item-normal-color,
-.year-seasons-loader-item-normal-color {
-    border-color: #00fd1e;
-    color: #00fd1e;
+.year-seasons-loader-item-normal-color,
+.months-loader-item-normal-color {
+    border-color: #ff30dd;
+    color: #ff30dd;
 }
 
 .seconds-loader-item-inverted-color,
 .minutes-loader-item-inverted-color,
 .hours-loader-item-inverted-color,
-.year-seasons-loader-item-inverted-color {
-    border-color: #00fd1e;
+.year-seasons-loader-item-inverted-color,
+.months-loader-item-inverted-color {
+    border-color: #ff30dd;
     color: #000;
-    background: #00fd1e;
+    background: #ff30dd;
 }

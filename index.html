@@ -93,8 +93,44 @@
                 </div>
             </div>
             <div class="col">
+                <div id="Month" class="clock"></div>
                 <div class="clock-section-title">Month:</div>
-                ?
+                <div class="months-loader">
+                    <div class="months-loader-item months-loader-item-normal-color month_01" data-month_id="01">
+                        January
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_02" data-month_id="02">
+                        February
+                    </div>
+
+                    <div class="months-loader-item months-loader-item-normal-color month_03" data-month_id="03">March
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_04" data-month_id="04">April
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_05" data-month_id="05">May
+                    </div>
+
+                    <div class="months-loader-item months-loader-item-normal-color month_06" data-month_id="06">June
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_07" data-month_id="07">July
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_08" data-month_id="08">August
+                    </div>
+
+                    <div class="months-loader-item months-loader-item-normal-color month_09" data-month_id="09">
+                        September
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_10" data-month_id="10">
+                        October
+                    </div>
+                    <div class="months-loader-item months-loader-item-normal-color month_11" data-month_id="11">
+                        November
+                    </div>
+
+                    <div class="months-loader-item months-loader-item-normal-color month_12" data-month_id="12">
+                        December
+                    </div>
+                </div>
             </div>
             <div class="col">
                 <div class="clock-section-title">Week day:</div>
@@ -291,6 +327,7 @@
         constructor() {
             this.date = new Date();
             // this.currentYear = this.date.getFullYear();
+            this.currentMonthOriginal = this.date.getMonth(); // 0 - 11.
             this.currentMonth = (this.date.getMonth() + 1); // With correction.
             this.currentDay = this.date.getDate();
             this.weekDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -319,12 +356,27 @@
                 2: 'Summer',
                 3: 'Autumn',
             }
+
+            this.months = {
+                1: 'January',
+                2: 'February',
+                3: 'March',
+                4: 'April',
+                5: 'May',
+                6: 'June',
+                7: 'July',
+                8: 'August',
+                9: 'September',
+                10: 'October',
+                11: 'November',
+                12: 'December',
+            };
         }
 
         showDate() {
             this.currentYear = this.date.getFullYear();
 
-            var dateString = this.currentYear + "-" + this.currentMonth + "-" + this.currentDay + ', ' + this.currentWeekDayName;
+            let dateString = this.currentYear + "-" + this.currentMonth + "-" + this.currentDay + ', ' + this.currentWeekDayName;
             console.log(this.currentYear);
             console.log(dateString);
             document.getElementById("Date").innerText = dateString;
@@ -465,7 +517,6 @@
             setTimeout(this.showMoonPhase, 86400);
         }
 
-
         /**
          * Human friendly moon Phase name.
          *
@@ -474,6 +525,10 @@
          */
         getMoonPhaseName(key) {
             return this.moonPhaseNames[key];
+        }
+
+        getMonthName(monthId) {
+            return this.months[monthId];
         }
 
         getCurrentYearSeasonName() {
@@ -513,6 +568,14 @@
             setTimeout(this.showYearSeason, 86400);
         }
 
+        showMonth() {
+            let currentMonthName = this.getMonthName((this.currentMonthOriginal + 1));
+
+            document.getElementById("Month").innerText = currentMonthName;
+
+            setTimeout(this.showMonth, 86400);
+        }
+
         switchSecondsLoader(currentSecond) {
             currentSecond = currentSecond.toString();
             var secondLoaderItemElements = document.querySelectorAll('.seconds-loader-item');
@@ -527,7 +590,7 @@
             }
 
             if (currentSecond == '00') {
-                var secondLoaderItemElements = document.querySelectorAll('.seconds-loader-item');
+                secondLoaderItemElements = document.querySelectorAll('.seconds-loader-item');
 
                 for (var k in secondLoaderItemElements) {
                     if (secondLoaderItemElements.hasOwnProperty(k)) {
@@ -558,7 +621,7 @@
             }
 
             if (currentMinute == '00') {
-                var minuteLoaderItemElements = document.querySelectorAll('.minutes-loader-item');
+                minuteLoaderItemElements = document.querySelectorAll('.minutes-loader-item');
 
                 for (var k in minuteLoaderItemElements) {
                     if (minuteLoaderItemElements.hasOwnProperty(k)) {
@@ -589,7 +652,7 @@
             }
 
             if (currentHour == '00') {
-                var hourLoaderItemElements = document.querySelectorAll('.hours-loader-item');
+                hourLoaderItemElements = document.querySelectorAll('.hours-loader-item');
 
                 for (var k in hourLoaderItemElements) {
                     if (hourLoaderItemElements.hasOwnProperty(k)) {
@@ -620,6 +683,22 @@
 
             document.querySelector('.season_' + currentYearSeasonId).classList.remove('year-seasons-loader-item-normal-color');
             document.querySelector('.season_' + currentYearSeasonId).classList.add('year-seasons-loader-item-inverted-color');
+        }
+
+        switchMonthsLoader(currentMonthId) {
+            var monthLoaderItemElements = document.querySelectorAll('.months-loader-item');
+
+            for (let k in monthLoaderItemElements) {
+                if (monthLoaderItemElements.hasOwnProperty(k)) {
+                    if (monthLoaderItemElements[k].getAttribute('data-month_id') < currentMonthId) {
+                        monthLoaderItemElements[k].classList.remove('months-loader-item-normal-color')
+                        monthLoaderItemElements[k].classList.add('months-loader-item-inverted-color')
+                    }
+                }
+            }
+
+            document.querySelector('.month_' + currentMonthId).classList.remove('months-loader-item-normal-color');
+            document.querySelector('.month_' + currentMonthId).classList.add('months-loader-item-inverted-color');
         }
 
         showSecondsLoader() {
@@ -689,6 +768,18 @@
                 console.log(e);
             }
         }
+
+        showMonthsLoader() {
+            try {
+                this.switchMonthsLoader(this.currentMonth);
+
+                setTimeout(function () {
+                    (new Clock()).showMonthsLoader();
+                }, 1000);
+            } catch (e) {
+                console.log(e);
+            }
+        }
     }
 
     (function () {
@@ -701,6 +792,8 @@
         (new Clock()).showMinutesLoader();
         (new Clock()).showHoursLoader();
         (new Clock()).showYearSeasonsLoader();
+        (new Clock()).showMonth();
+        (new Clock()).showMonthsLoader();
     })();
 
 </script>
