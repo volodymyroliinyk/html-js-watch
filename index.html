@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="header1">Watch</h1>
+                <h1 class="header1" onload="translateInnerHtml(this);">Watch</h1>
             </div>
         </div>
     </div>
@@ -338,11 +338,35 @@
 <footer>
 
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+<script src="/assets/lang/en.js"></script>
+<script src="/assets/lang/uk.js"></script>
+<script src="/assets/lang/fr.js"></script>
+
 <script>
+    function __(key) {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const languageCode = urlParams.get('lang')
+            return lang[languageCode][key];
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    function translateInnerHtml(element) {
+        try {
+            console.log(element);
+            element.innerHTML = __(element.innerHTML);
+        } catch (e) {
+
+        }
+    }
+
     class Clock {
         constructor() {
             this.date = new Date();
@@ -360,52 +384,52 @@
             }
 
             this.weekDayNames = {
-                0: 'Sunday',
-                1: 'Monday',
-                2: 'Tuesday',
-                3: 'Wednesday',
-                4: 'Thursday',
-                5: 'Friday',
-                6: 'Saturday',
+                0: __('Sunday'),
+                1: __('Monday'),
+                2: __('Tuesday'),
+                3: __('Wednesday'),
+                4: __('Thursday'),
+                5: __('Friday'),
+                6: __('Saturday'),
             };
             this.currentWeekDayName = this.weekDayNames[this.date.getDay()];
 
             this.moonPhaseNames = {
-                0: "New Moon",
-                1: "Waxing Crescent Moon",
-                2: "Quarter Moon",
-                3: "Waxing Gibbous Moon",
-                4: "Full Moon",
-                5: "Waning Gibbous Moon",
-                6: "Last Quarter Moon",
-                7: "Waning Crescent Moon"
+                0: __("New Moon"),
+                1: __("Waxing Crescent Moon"),
+                2: __("Quarter Moon"),
+                3: __("Waxing Gibbous Moon"),
+                4: __("Full Moon"),
+                5: __("Waning Gibbous Moon"),
+                6: __("Last Quarter Moon"),
+                7: __("Waning Crescent Moon")
             };
 
             this.yearSeasons = {
-                0: 'Winter',
-                1: 'Spring',
-                2: 'Summer',
-                3: 'Autumn',
+                0: __('Winter'),
+                1: __('Spring'),
+                2: __('Summer'),
+                3: __('Autumn'),
             }
 
             this.months = {
-                1: 'January',
-                2: 'February',
-                3: 'March',
-                4: 'April',
-                5: 'May',
-                6: 'June',
-                7: 'July',
-                8: 'August',
-                9: 'September',
-                10: 'October',
-                11: 'November',
-                12: 'December',
+                1: __('January'),
+                2: __('February'),
+                3: __('March'),
+                4: __('April'),
+                5: __('May'),
+                6: __('June'),
+                7: __('July'),
+                8: __('August'),
+                9: __('September'),
+                10: __('October'),
+                11: __('November'),
+                12: __('December'),
             };
 
             this.currentTimeZone = this.extractTimeZone();
 
-            console.log(this.currentTimeZone)
+            // console.log(this.currentTimeZone)
         }
 
         extractTimeZone() {
@@ -416,7 +440,7 @@
         showDate() {
             this.currentYear = this.date.getFullYear();
 
-            let dateString = "Year: " + this.currentYear + "\nMonth: " + this.currentMonth + "\nDay: " + this.currentDay;
+            let dateString = __('Year') + ": " + this.currentYear + "\n" + __('Month') + ": " + this.currentMonth + "\n" + __('Day') + ": " + this.currentDay;
             document.getElementById("Date").innerText = dateString;
 
             setTimeout(this.showDate, 864000);
@@ -621,7 +645,7 @@
         showWeekDay() {
             document.getElementById("WeekDay").innerText = this.currentWeekDayName;
 
-            setTimeout(this.showWeekDay, 86400);
+            setTimeout(this.showWeekDay, 10000);
         }
 
         switchSecondsLoader(currentSecond) {
