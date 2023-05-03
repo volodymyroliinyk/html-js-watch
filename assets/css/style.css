@@ -1,27 +1,96 @@
+@font-face {
+    font-family: 'digital-7';
+    src: url('../fonts/digital-7.ttf');
+}
+
+@font-face {
+    font-family: 'Ubuntu Bold';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/ubuntu/Ubuntu-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Bold Italic';
+    font-style: italic;
+    font-weight: bold;
+    src: url('../fonts/ubuntu/Ubuntu-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Italic';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../fonts/ubuntu/Ubuntu-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Light';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/ubuntu/Ubuntu-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Light Italic';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../fonts/ubuntu/Ubuntu-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/ubuntu/Ubuntu-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Medium Italic';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../fonts/ubuntu/Ubuntu-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf') format('truetype');
+}
+
 body {
     background: black;
 }
 
 .header1 {
-    font-family: Orbitron;
+    font-family: 'Ubuntu Regular';
     color: #ff62e4;
 }
 
 .clock {
     color: #ff62e4;
-    font-size: 34px;
-    font-family: Orbitron;
-    letter-spacing: 7px;
+    font-size: 38px;
+    line-height: 38px;
+    font-family: 'Ubuntu Regular';
 }
 
 .clock-section-title {
-    font-family: Orbitron;
+    font-family: 'Ubuntu Regular';
     font-size: 20px;
     color: #fff;
 }
 
+.clock-section-title span {
+    font-size: 20px;
+}
+
 .moon-img {
     width: 100px;
+}
+
+.st-digital-clock {
+    font-family: 'digital-7';
 }
 
 .seconds-loader-item,
@@ -29,32 +98,34 @@ body {
     display: inline-block;
     border: 1px solid;
     width: 9.00066666%;
-    height: 22px;
-    font-family: Orbitron;
-    font-size: 18px;
-    line-height: 20px;
+    height: 30px;
+    font-family: 'digital-7';
+    font-size: 30px;
+    line-height: 21px;
     text-align: center;
+    margin-bottom: 3px;
 }
 
 .hours-loader-item {
     display: inline-block;
     border: 1px solid;
     width: 15.8%;
-    height: 22px;
-    font-family: Orbitron;
-    font-size: 18px;
-    line-height: 20px;
+    height: 30px;
+    font-family: 'digital-7';
+    font-size: 30px;
+    line-height: 21px;
     text-align: center;
+    margin-bottom: 3px;
 }
 
 .year-seasons-loader-item {
     display: inline-block;
     border: 1px solid;
     width: 23.9999666%;
-    height: 22px;
-    font-family: Orbitron;
-    font-size: 18px;
-    line-height: 20px;
+    height: 26px;
+    font-family: 'Ubuntu Regular';
+    font-size: 24px;
+    line-height: 26px;
     text-align: center;
 }
 
@@ -62,21 +133,27 @@ body {
     display: inline-block;
     border: 1px solid;
     width: 31.999999999666%;
-    height: 22px;
-    font-family: Orbitron;
-    font-size: 18px;
-    line-height: 20px;
+    height: 26px;
+    font-family: 'Ubuntu Regular';
+    font-size: 24px;
+    line-height: 26px;
     text-align: center;
+}
+
+.date-title {
+    font-family: 'Ubuntu Regular';
+    font-size: 28px;
+    line-height: 28px;
 }
 
 .week-days-loader-item {
     display: inline-block;
     border: 1px solid;
     width: 32.0%;
-    height: 22px;
-    font-family: Orbitron;
-    font-size: 18px;
-    line-height: 20px;
+    height: 26px;
+    font-family: 'Ubuntu Regular';
+    font-size: 24px;
+    line-height: 26px;
     text-align: center;
 }
 

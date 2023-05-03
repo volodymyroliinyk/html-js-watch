@@ -36,7 +36,7 @@ var lang = {
             "Tuesday": "Вівторок",
             "Waning Crescent Moon": "Убуваючий півмісяць",
             "Waning Gibbous Moon": "Убуваючий місяць",
-            "Watch": "Дивитися",
+            "Watch": "Годинник",
             "Waxing Crescent Moon": "Зростаючий півмісяць",
             "Waxing Gibbous Moon": "Зростаючий місяць",
             "Wednesday": "Середа",

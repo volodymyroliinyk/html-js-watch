@@ -2,22 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Watch</title>
+    <title translatable="">Watch</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="Watch">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <style media="" data-href="https://fonts.googleapis.com/css?family=Orbitron">/* latin */
-    @font-face {
-        font-family: 'Orbitron';
-        font-style: normal;
-        font-weight: 400;
-        src: url(https://fonts.gstatic.com/s/orbitron/v29/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6BoWgz.woff2) format('woff2');
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gidugu&family=Michroma&display=swap');
+
+        @font-face {
+            font-family: "DSEG7 Classic";
+            src: url(https://manzdev.github.io/twitch-casio/dseg7-bold.woff2) format("woff2"),
+            url(https://manzdev.github.io/twitch-casio/dseg7-bold.woff) format("woff");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "DSEG14 Classic";
+            src: url(https://manzdev.github.io/twitch-casio/dseg14-bold.woff2) format("woff2"),
+            url(https://manzdev.github.io/twitch-casio/dseg14-bold.woff) format("woff");
+            font-display: swap;
+        }
     </style>
 </head>
 <body>
@@ -25,7 +35,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="header1" onload="translateInnerHtml(this);">Watch</h1>
+                <h1 class="header1" translatable="">Watch</h1>
             </div>
         </div>
     </div>
@@ -45,24 +55,24 @@
 
 <section>
     <div class="container">
-        <!-- Content here -->
+        <!-- ROW 1 -->
         <div class="row">
-            <div class="col">
-                <div class="clock-section-title">Date:</div>
-                <div id="Date" class="clock"></div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-date">
+                <div class="clock-section-title "><span translatable="">Date</span>:</div>
+                <div id="Date" class="clock st-digital-clock"></div>
             </div>
-            <div class="col">
-                <div class="clock-section-title">Time:</div>
-                <div id="MyClockDisplay12" class="clock"></div>
-                <div id="MyClockDisplay24" class="clock"></div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-time">
+                <div class="clock-section-title"><span translatable="">Time</span>:</div>
+                <div id="MyClockDisplay12" class="clock st-digital-clock"></div>
+                <div id="MyClockDisplay24" class="clock st-digital-clock"></div>
             </div>
-            <div class="col">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-moon">
                 <div class="row">
-                    <div class="clock-section-title">Moon phase:</div>
+                    <div class="clock-section-title"><span translatable="">Moon phase</span>:</div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div id="MoonPhase" class="clock"></div>
+                        <div id="MoonPhase" class="clock date-title"></div>
                     </div>
                     <div class="col">
                         <div class="clock">
@@ -71,96 +81,110 @@
                     </div>
                 </div>
             </div>
-
         </div>
+
+        <!-- ROW 2 -->
         <div class="row">
-            <div class="col">
-                <div class="clock-section-title">Year season:</div>
-                <div id="YearSeason" class="clock"></div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-season">
+                <div class="clock-section-title"><span translatable="">Year season</span>:</div>
+                <div id="YearSeason" class="clock date-title"></div>
                 <div class="year-seasons-loader">
                     <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_0"
-                         data-season_id="0">Winter
+                         data-season_id="0" translatable="">Winter
                     </div>
                     <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_1"
-                         data-season_id="1">Spring
+                         data-season_id="1" translatable="">Spring
                     </div>
                     <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_2"
-                         data-season_id="2">Summer
+                         data-season_id="2" translatable="">Summer
                     </div>
                     <div class="year-seasons-loader-item year-seasons-loader-item-normal-color season_3"
-                         data-season_id="3">Autumn
+                         data-season_id="3" translatable="">Autumn
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="clock-section-title">Month:</div>
-                <div id="Month" class="clock"></div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-month">
+                <div class="clock-section-title"><span translatable="">Month</span>:</div>
+                <div id="Month" class="clock date-title"></div>
                 <div class="months-loader">
-                    <div class="months-loader-item months-loader-item-normal-color month_01" data-month_id="01">
+                    <div class="months-loader-item months-loader-item-normal-color month_01" data-month_id="01"
+                         translatable="">
                         January
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_02" data-month_id="02">
+                    <div class="months-loader-item months-loader-item-normal-color month_02" data-month_id="02"
+                         translatable="">
                         February
                     </div>
 
-                    <div class="months-loader-item months-loader-item-normal-color month_03" data-month_id="03">March
+                    <div class="months-loader-item months-loader-item-normal-color month_03" data-month_id="03"
+                         translatable="">March
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_04" data-month_id="04">April
+                    <div class="months-loader-item months-loader-item-normal-color month_04" data-month_id="04"
+                         translatable="">April
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_05" data-month_id="05">May
+                    <div class="months-loader-item months-loader-item-normal-color month_05" data-month_id="05"
+                         translatable="">May
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_06" data-month_id="06">June
+                    <div class="months-loader-item months-loader-item-normal-color month_06" data-month_id="06"
+                         translatable="">June
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_07" data-month_id="07">July
+                    <div class="months-loader-item months-loader-item-normal-color month_07" data-month_id="07"
+                         translatable="">July
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_08" data-month_id="08">August
+                    <div class="months-loader-item months-loader-item-normal-color month_08" data-month_id="08"
+                         translatable="">August
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_09" data-month_id="09">
+                    <div class="months-loader-item months-loader-item-normal-color month_09" data-month_id="09"
+                         translatable="">
                         September
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_10" data-month_id="10">
+                    <div class="months-loader-item months-loader-item-normal-color month_10" data-month_id="10"
+                         translatable="">
                         October
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_11" data-month_id="11">
+                    <div class="months-loader-item months-loader-item-normal-color month_11" data-month_id="11"
+                         translatable="">
                         November
                     </div>
-                    <div class="months-loader-item months-loader-item-normal-color month_12" data-month_id="12">
+                    <div class="months-loader-item months-loader-item-normal-color month_12" data-month_id="12"
+                         translatable="">
                         December
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="clock-section-title">Week day:</div>
-                <div id="WeekDay" class="clock"></div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-week-day">
+                <div class="clock-section-title"><span translatable="">Week day</span>:</div>
+                <div id="WeekDay" class="clock date-title"></div>
                 <div class="week-days-loader">
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_1"
-                         data-week_day_id="1">Monday
+                         data-week_day_id="1" translatable="">Monday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_2"
-                         data-week_day_id="2">Tuesday
+                         data-week_day_id="2" translatable="">Tuesday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_3"
-                         data-week_day_id="3">Wednesday
+                         data-week_day_id="3" translatable="">Wednesday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_4"
-                         data-week_day_id="4">Thursday
+                         data-week_day_id="4" translatable="">Thursday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_5"
-                         data-week_day_id="5">Friday
+                         data-week_day_id="5" translatable="">Friday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_6"
-                         data-week_day_id="6">Saturday
+                         data-week_day_id="6" translatable="">Saturday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_0"
-                         data-week_day_id="0">Sunday
+                         data-week_day_id="0" translatable="">Sunday
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- ROW 3 -->
         <div class="row">
-            <div class="col">
-                <div class="clock-section-title">Current hour:</div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-current-hour">
+                <div class="clock-section-title"><span translatable="">Current hour</span>:</div>
                 <div class="hours-loader">
                     <div class="hours-loader-item hours-loader-item-normal-color hour_00">00</div>
                     <div class="hours-loader-item hours-loader-item-normal-color hour_01">01</div>
@@ -190,8 +214,8 @@
                     <div class="hours-loader-item hours-loader-item-normal-color hour_23">23</div>
                 </div>
             </div>
-            <div class="col">
-                <div class="clock-section-title">Current minute:</div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-current-minute">
+                <div class="clock-section-title"><span translatable="">Current minute</span>:</div>
                 <div class="minutes-loader">
                     <div class="minutes-loader-item minutes-loader-item-normal-color minute_00">00</div>
                     <div class="minutes-loader-item minutes-loader-item-normal-color minute_01">01</div>
@@ -260,8 +284,8 @@
                     <div class="minutes-loader-item  minutes-loader-item-normal-color minute_59">59</div>
                 </div>
             </div>
-            <div class="col">
-                <div class="clock-section-title">Current second:</div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 section-current-second">
+                <div class="clock-section-title"><span translatable="">Current second</span>:</div>
                 <div class="seconds-loader">
                     <div class="seconds-loader-item  seconds-loader-item-normal-color second_00">00</div>
                     <div class="seconds-loader-item  seconds-loader-item-normal-color second_01">01</div>
@@ -348,11 +372,38 @@
 <script src="/assets/lang/fr.js"></script>
 
 <script>
+    /**
+     * https://codepen.io/afarrar/pen/JRaEjP
+     */
+
+
+    function breakpoint() {
+        let breakpoints = {
+            '(min-width: 1921px)': 'xxxl',
+            '(min-width: 1400px) and (max-width: 1920px)': 'xxl',
+            '(min-width: 1200px) and (max-width: 1399.98px)': 'xl',
+            '(min-width: 992px) and (max-width: 1199.98px)': 'lg',
+            '(min-width: 768px) and (max-width: 991.98px)': 'md',
+            '(min-width: 576px) and (max-width: 767.98px)': 'sm',
+            '(max-width: 575.98px)': 'xs',
+        };
+
+        for (let media in breakpoints) {
+            if (window.matchMedia(media).matches) {
+                return breakpoints[media] + media;
+            }
+        }
+
+        return null;
+    }
+
     function __(key) {
         try {
             const urlParams = new URLSearchParams(window.location.search);
-            const languageCode = urlParams.get('lang')
-            return lang[languageCode][key];
+            const languageCode = urlParams.get('lang') ?? 'en';
+
+            let translated = lang[languageCode][key]
+            return translated;
         } catch (e) {
             console.log(e);
         }
@@ -364,6 +415,16 @@
             element.innerHTML = __(element.innerHTML);
         } catch (e) {
 
+        }
+    }
+
+    function translateAllElements() {
+        var translatedElements = document.querySelectorAll('[translatable=""]');
+        for (let k in translatedElements) {
+            if (translatedElements.hasOwnProperty(k)) {
+                translatedElements[k].innerHTML = __(translatedElements[k].innerHTML.trim());
+
+            }
         }
     }
 
@@ -440,8 +501,11 @@
         showDate() {
             this.currentYear = this.date.getFullYear();
 
-            let dateString = __('Year') + ": " + this.currentYear + "\n" + __('Month') + ": " + this.currentMonth + "\n" + __('Day') + ": " + this.currentDay;
-            document.getElementById("Date").innerText = dateString;
+            var dateString = '<span class="date-title">' + __('Year') + ":</span> " + this.currentYear +
+                "<br><span class=\"date-title\">" + __('Month') + ":</span> " + this.currentMonth +
+                "<br><span class=\"date-title\">" + __('Day') + ":</span> " + this.currentDay;
+
+            document.getElementById("Date").innerHTML = dateString;
 
             setTimeout(this.showDate, 864000);
         }
@@ -778,9 +842,10 @@
 
             for (let k in weekDayLoaderItemElements) {
                 if (weekDayLoaderItemElements.hasOwnProperty(k)) {
+                    console.log(weekDayLoaderItemElements[k].getAttribute('data-week_day_id'), currentWeekDayId)
                     if (weekDayLoaderItemElements[k].getAttribute('data-week_day_id') < currentWeekDayId) {
-                        weekDayLoaderItemElements[k].classList.remove('data-weeks-loader-item-normal-color')
-                        weekDayLoaderItemElements[k].classList.add('data-weeks-loader-item-inverted-color')
+                        weekDayLoaderItemElements[k].classList.remove('week-days-loader-item-normal-color')
+                        weekDayLoaderItemElements[k].classList.add('week-days-loader-item-inverted-color')
                     }
                 }
             }
@@ -1357,6 +1422,8 @@
     }
 
     (function () {
+        console.log(breakpoint());
+
         (new Clock()).showDate();
         (new Clock()).showCurrentTime24();
         (new Clock()).showCurrentTime12();
@@ -1370,6 +1437,8 @@
         (new Clock()).showMonthsLoader();
         (new Clock()).showWeekDay();
         (new Clock()).showWeekDaysLoaderLoader();
+
+        translateAllElements();
     })();
 
 </script>
