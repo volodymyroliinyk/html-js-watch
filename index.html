@@ -12,23 +12,6 @@
           crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Gidugu&family=Michroma&display=swap');
-
-        @font-face {
-            font-family: "DSEG7 Classic";
-            src: url(https://manzdev.github.io/twitch-casio/dseg7-bold.woff2) format("woff2"),
-            url(https://manzdev.github.io/twitch-casio/dseg7-bold.woff) format("woff");
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: "DSEG14 Classic";
-            src: url(https://manzdev.github.io/twitch-casio/dseg14-bold.woff2) format("woff2"),
-            url(https://manzdev.github.io/twitch-casio/dseg14-bold.woff) format("woff");
-            font-display: swap;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -42,11 +25,7 @@
 </header>
 
 <nav>
-    <!--    <ul>-->
-    <!--        <li><a href="">Home</a></li>-->
-    <!--        <li><a href="">About</a></li>-->
-    <!--        <li><a href="">Contact</a></li>-->
-    <!--    </ul>-->
+
 </nav>
 
 <aside>
@@ -175,7 +154,7 @@
                          data-week_day_id="6" translatable="">Saturday
                     </div>
                     <div class="week-days-loader-item week-days-loader-item-normal-color week-day-id_0"
-                         data-week_day_id="0" translatable="">Sunday
+                         data-week_day_id="7" translatable="">Sunday
                     </div>
                 </div>
             </div>
@@ -445,15 +424,25 @@
             }
 
             this.weekDayNames = {
-                0: __('Sunday'),
                 1: __('Monday'),
                 2: __('Tuesday'),
                 3: __('Wednesday'),
                 4: __('Thursday'),
                 5: __('Friday'),
                 6: __('Saturday'),
+                7: __('Sunday'),
             };
-            this.currentWeekDayName = this.weekDayNames[this.date.getDay()];
+
+            switch (this.date.getDay()) {
+                case 0:
+                    this.weekIdCorrected = 7;
+                    break;
+                default:
+                    this.weekIdCorrected = this.date.getDay() + 1;
+                    break;
+            }
+
+            this.currentWeekDayName = this.weekDayNames[this.weekIdCorrected];
 
             this.moonPhaseNames = {
                 0: __("New Moon"),
@@ -709,7 +698,10 @@
         showWeekDay() {
             document.getElementById("WeekDay").innerText = this.currentWeekDayName;
 
-            setTimeout(this.showWeekDay, 10000);
+
+            setTimeout(function () {
+                (new Clock()).showWeekDay();
+            }, 86400);
         }
 
         switchSecondsLoader(currentSecond) {
