@@ -390,7 +390,6 @@
 
     function translateInnerHtml(element) {
         try {
-            console.log(element);
             element.innerHTML = __(element.innerHTML);
         } catch (e) {
 
@@ -478,8 +477,6 @@
             };
 
             this.currentTimeZone = this.extractTimeZone();
-
-            // console.log(this.currentTimeZone)
         }
 
         extractTimeZone() {
@@ -834,7 +831,6 @@
 
             for (let k in weekDayLoaderItemElements) {
                 if (weekDayLoaderItemElements.hasOwnProperty(k)) {
-                    console.log(weekDayLoaderItemElements[k].getAttribute('data-week_day_id'), currentWeekDayId)
                     if (weekDayLoaderItemElements[k].getAttribute('data-week_day_id') < currentWeekDayId) {
                         weekDayLoaderItemElements[k].classList.remove('week-days-loader-item-normal-color')
                         weekDayLoaderItemElements[k].classList.add('week-days-loader-item-inverted-color')
