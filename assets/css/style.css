@@ -129,14 +129,15 @@ body {
     text-align: center;
 }
 
+
 .months-loader-item {
     display: inline-block;
     border: 1px solid;
     width: 31.999999999666%;
-    height: 26px;
+    height: 24px;
     font-family: 'Ubuntu Regular';
     font-size: 24px;
-    line-height: 26px;
+    line-height: 24px;
     text-align: center;
 }
 
@@ -150,10 +151,10 @@ body {
     display: inline-block;
     border: 1px solid;
     width: 32.0%;
-    height: 26px;
+    height: 24px;
     font-family: 'Ubuntu Regular';
     font-size: 24px;
-    line-height: 26px;
+    line-height: 24px;
     text-align: center;
 }
 
@@ -176,4 +177,44 @@ body {
     border-color: #ff62e4;
     color: #000;
     background: #ff62e4;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .year-seasons-loader-item-md,
+    .months-loader-item-md,
+    .week-days-loader-item-md {
+        display: inline-block;
+        border: 1px solid;
+        width: 48.999999999666%;
+        height: 22px;
+        font-family: 'Ubuntu Regular';
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .hours-loader-item-md {
+        display: inline-block;
+        border: 1px solid;
+        width: 14.9999%;
+        height: 30px;
+        font-family: 'digital-7';
+        font-size: 30px;
+        line-height: 21px;
+        text-align: center;
+        margin-bottom: 3px;
+    }
+
+    .seconds-loader-item-md,
+    .minutes-loader-item-md {
+        display: inline-block;
+        border: 1px solid;
+        width: 15.00066666%;
+        height: 30px;
+        font-family: 'digital-7';
+        font-size: 30px;
+        line-height: 21px;
+        text-align: center;
+        margin-bottom: 3px;
+    }
 }
