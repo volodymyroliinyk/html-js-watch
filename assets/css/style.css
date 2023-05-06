@@ -179,6 +179,67 @@ body {
     background: #ff62e4;
 }
 
+.language-section{
+    list-style-type: none;
+    line-height: 30px;
+}
+
+.language-section li{
+    display: inline-block;
+    padding: 5px;
+
+}
+
+.language-section li a{
+    color: #ff62e4;
+}
+
+/* Analog watch */
+#analog-clockContainer {
+    position: relative;
+    margin: auto;
+    height: 180px;
+    /*to make the height and width responsive*/
+    width: 180px;
+    background: url(/assets/images/analog-bg.png) no-repeat;
+    /*setting our background image*/
+    background-size: 100%;
+}
+
+#analog-hour,
+#analog-minute,
+#analog-second {
+    position: absolute;
+    background: #ff62e4;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+#analog-hour {
+    width: 1.8%;
+    height: 25%;
+    top: 25%;
+    left: 48.85%;
+    opacity: 0.8;
+}
+
+#analog-minute {
+    width: 1.6%;
+    height: 30%;
+    top: 19%;
+    left: 48.9%;
+    opacity: 0.8;
+}
+
+#analog-second {
+    width: 1%;
+    height: 40%;
+    top: 9%;
+    left: 49.25%;
+    opacity: 0.8;
+}
+/* Analog watch:end */
+
 @media (min-width: 768px) and (max-width: 991.98px) {
     .year-seasons-loader-item-md,
     .months-loader-item-md,
