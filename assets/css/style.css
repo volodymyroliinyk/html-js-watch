@@ -63,6 +63,7 @@ body {
     background: black;
 }
 
+/* xxl (min-width: 1400px) and (max-width: 1920px) */
 .header1 {
     font-family: 'Ubuntu Regular';
     color: #ff62e4;
@@ -93,23 +94,47 @@ body {
     font-family: 'digital-7';
 }
 
-.seconds-loader-item,
-.minutes-loader-item {
+
+
+
+
+.year-seasons-loader-item {
     display: inline-block;
     border: 1px solid;
-    width: 9.00066666%;
-    height: 40px;
-    font-family: 'digital-7';
-    font-size: 30px;
-    line-height: 32px;
+    width: 24.6999777%;
+    height: 24px;
+    font-family: 'Ubuntu Regular';
+    font-size: 20px;
+    line-height: 24px;
     text-align: center;
-    margin-bottom: 3px;
+}
+
+.months-loader-item {
+    display: inline-block;
+    border: 1px solid;
+    width: 7.999999999666%;
+    height: 24px;
+    font-family: 'Ubuntu Regular';
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.week-days-loader-item {
+    display: inline-block;
+    border: 1px solid;
+    width: 14.0%;
+    height: 24px;
+    font-family: 'Ubuntu Regular';
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
 }
 
 .hours-loader-item {
     display: inline-block;
     border: 1px solid;
-    width: 15.8%;
+    width: 3.855%;
     height: 40px;
     font-family: 'digital-7';
     font-size: 30px;
@@ -118,27 +143,17 @@ body {
     margin-bottom: 3px;
 }
 
-.year-seasons-loader-item {
+.seconds-loader-item,
+.minutes-loader-item {
     display: inline-block;
     border: 1px solid;
-    width: 23.9999666%;
-    height: 26px;
-    font-family: 'Ubuntu Regular';
-    font-size: 24px;
-    line-height: 26px;
+    width: 3.0220066666%;
+    height: 40px;
+    font-family: 'digital-7';
+    font-size: 30px;
+    line-height: 32px;
     text-align: center;
-}
-
-
-.months-loader-item {
-    display: inline-block;
-    border: 1px solid;
-    width: 31.999999999666%;
-    height: 24px;
-    font-family: 'Ubuntu Regular';
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
+    margin-bottom: 3px;
 }
 
 .date-title {
@@ -147,33 +162,24 @@ body {
     line-height: 36px;
 }
 
-.week-days-loader-item {
-    display: inline-block;
-    border: 1px solid;
-    width: 32.0%;
-    height: 24px;
-    font-family: 'Ubuntu Regular';
-    font-size: 24px;
-    line-height: 24px;
-    text-align: center;
-}
 
-.seconds-loader-item-normal-color,
-.minutes-loader-item-normal-color,
-.hours-loader-item-normal-color,
-.year-seasons-loader-item-normal-color,
-.months-loader-item-normal-color,
-.week-days-loader-item-normal-color {
+
+.sli-normal-color,
+.mli-normal-color,
+.hli-normal-color,
+.ysli-normal-color,
+.moli-normal-color,
+.wdli-normal-color {
     border-color: #ff62e4;
     color: #ff62e4;
 }
 
-.seconds-loader-item-inverted-color,
-.minutes-loader-item-inverted-color,
-.hours-loader-item-inverted-color,
-.year-seasons-loader-item-inverted-color,
-.months-loader-item-inverted-color,
-.week-days-loader-item-inverted-color {
+.sli-inverted-color,
+.mli-inverted-color,
+.hli-inverted-color,
+.ysli-inverted-color,
+.moli-inverted-color,
+.wdli-inverted-color {
     border-color: #ff62e4;
     color: #000;
     background: #ff62e4;
@@ -240,42 +246,110 @@ body {
 }
 /* Analog watch:end */
 
+/* xl */
+@media (min-width: 1200px) and (max-width: 1399.98px){
+    .moli-xl{
+        width: 7.989999999666%;
+        font-size: 16px;
+    }
+    .wdli-xl{
+        width: 13.965%;
+    }
+    .hli-xl{
+        width: 3.809643%;
+    }
+    .mli-xl,
+    .sli-xl{
+        width: 2.9722226%;
+    }
+}
+/* lg */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .ysli-lg{
+        width:24.599999999777%
+    }
+    .moli-lg{
+        width: 7.8999999999666%;
+        font-size: 14px;
+    }
+    .wdli-lg{
+        width: 13.899999965%;
+    }
+    .hli-lg{
+        width: 3.7409643%;
+    }
+    .mli-lg,
+    .sli-lg{
+        width: 2.8999999999%;
+        font-size: 24px;
+    }
+}
+/* md */
 @media (min-width: 768px) and (max-width: 991.98px) {
-    .year-seasons-loader-item-md,
-    .months-loader-item-md,
-    .week-days-loader-item-md {
-        display: inline-block;
-        border: 1px solid;
-        width: 48.999999999666%;
-        height: 22px;
-        font-family: 'Ubuntu Regular';
-        font-size: 20px;
-        line-height: 20px;
-        text-align: center;
+    .ysli-md{
+        width: 24.5499999999666%;
+    }
+    .moli-md{
+        width: 16.0999999999666%;
+    }
+    .wdli-md {
+        width: 13.772220%;
+        font-size: 17px;
     }
 
-    .hours-loader-item-md {
-        display: inline-block;
-        border: 1px solid;
-        width: 14.9999%;
-        height: 40px;
-        font-family: 'digital-7';
-        font-size: 30px;
-        line-height: 32px;
-        text-align: center;
-        margin-bottom: 3px;
+    .hli-md{
+        width: 3.57409643%;
+        font-size: 24px;
+    }
+    .mli-md,
+    .sli-md{
+        width: 2.74999999999%;
+        font-size: 18px;
+    }
+}
+/* sm */
+@media (min-width: 576px) and (max-width: 767.98px){
+    .ysli-sm{
+        width: 24.3969999999%;
+    }
+    .moli-sm{
+        width: 24.3973333333%;
+    }
+    .wdli-sm {
+        width: 13.589999999%;
+        font-size: 12px;
     }
 
-    .seconds-loader-item-md,
-    .minutes-loader-item-md {
-        display: inline-block;
-        border: 1px solid;
-        width: 15.00066666%;
-        height: 40px;
-        font-family: 'digital-7';
-        font-size: 30px;
-        line-height: 32px;
-        text-align: center;
-        margin-bottom: 3px;
+    .hli-sm{
+        width: 7.57409643%;
+        font-size: 24px;
+    }
+    .mli-sm,
+    .sli-sm{
+        width: 4.1999999999%;
+        font-size: 18px;
+    }
+}
+/* xs */
+@media (max-width: 575.98px) {
+    .ysli-xs{
+        width: 24.1999999%;
+    }
+    .moli-xs{
+        width: 32.5999999%;
+    }
+    .wdli-xs {
+        width: 13.299999989999999%;
+        font-size: 12px;
+    }
+
+    .hli-xs{
+        width: 7.29999997%;
+        font-size: 24px;
+    }
+    .mli-xs,
+    .sli-xs{
+        width: 7.1999999999%;
+        font-size: 18px;
     }
 }
