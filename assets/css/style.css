@@ -63,6 +63,7 @@ body {
     background: url(/assets/images/bg3.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
 }
 
 /* xxl (min-width: 1400px) and (max-width: 1920px) */
