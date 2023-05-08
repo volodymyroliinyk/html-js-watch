@@ -60,17 +60,19 @@
 }
 
 body {
-    background: black;
+    background: url(/assets/images/bg3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* xxl (min-width: 1400px) and (max-width: 1920px) */
 .header1 {
     font-family: 'Ubuntu Regular';
-    color: #ff62e4;
+    color: #000000;
 }
 
 .clock {
-    color: #ff62e4;
+    color: #000000;
     font-size: 38px;
     line-height: 38px;
     font-family: 'Ubuntu Regular';
@@ -79,7 +81,7 @@ body {
 .clock-section-title {
     font-family: 'Ubuntu Regular';
     font-size: 20px;
-    color: #fff;
+    color: #000000;
 }
 
 .clock-section-title span {
@@ -170,8 +172,8 @@ body {
 .ysli-normal-color,
 .moli-normal-color,
 .wdli-normal-color {
-    border-color: #ff62e4;
-    color: #ff62e4;
+    border-color: #000000;
+    color: #000000;
 }
 
 .sli-inverted-color,
@@ -180,9 +182,9 @@ body {
 .ysli-inverted-color,
 .moli-inverted-color,
 .wdli-inverted-color {
-    border-color: #ff62e4;
-    color: #000;
-    background: #ff62e4;
+    border-color: #000000;
+    color: #FFFFFF;
+    background: #000000;
 }
 
 .language-section{
@@ -197,7 +199,7 @@ body {
 }
 
 .language-section li a{
-    color: #ff62e4;
+    color: #000000;
 }
 
 /* Analog watch */
@@ -207,7 +209,7 @@ body {
     height: 180px;
     /*to make the height and width responsive*/
     width: 180px;
-    background: url(/assets/images/analog-bg.png) no-repeat;
+    background: url(/assets/images/analog-bg2.png) no-repeat;
     /*setting our background image*/
     background-size: 100%;
 }
@@ -216,7 +218,7 @@ body {
 #analog-minute,
 #analog-second {
     position: absolute;
-    background: #ff62e4;
+    background: #000000;
     border-radius: 10px;
     transform-origin: bottom;
 }
