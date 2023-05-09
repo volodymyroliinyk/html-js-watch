@@ -70,6 +70,7 @@ body {
 .header1 {
     font-family: 'Ubuntu Regular';
     color: #000000;
+    line-height: 70px;
 }
 
 .clock {
@@ -83,6 +84,8 @@ body {
     font-family: 'Ubuntu Regular';
     font-size: 20px;
     color: #000000;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .clock-section-title span {
@@ -190,7 +193,7 @@ body {
 
 .language-section{
     list-style-type: none;
-    line-height: 30px;
+    line-height: 60px;
 }
 
 .language-section li{
